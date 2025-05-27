@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- **Solution URL:** [https://github.com/yourusername/time-tracking-dashboard](https://github.com/yourusername/time-tracking-dashboard)
+- **Solution URL:** [https://github.com/Abdulgafar-Riro/time-tracking-dashboard-main](https://github.com/Abdulgafar-Riro/time-tracking-dashboard-main)
 - **Live Site URL:** [https://webmujahid-time-tracking-dashboard.netlify.app/](https://webmujahid-time-tracking-dashboard.netlify.app/)
 
 ## My process
