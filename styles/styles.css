@@ -1,3 +1,219 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background-color: hsl(226, 43%, 10%);
+  color: white;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.dashboard-header {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.dashboard-header .reporter {
+  background-color: hsl(235, 45%, 61%);
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  border-radius: 15px;
+}
+.dashboard-header .reporter img {
+  width: 74px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+.dashboard-header .reporter .reporter-info .report {
+  color: hsl(236, 100%, 87%);
+}
+.dashboard-header .reporter .reporter-info .name {
+  font-size: 26px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+}
+.dashboard-header .date-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+.dashboard-header .date-navigation button {
+  background: none;
+  border: none;
+  color: hsl(236, 100%, 87%);
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+.dashboard-header .date-navigation button.active {
+  color: white;
+}
+
+.activities-container .activities {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.activities-container .activity-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.activities-container .activity-card .image-container {
+  height: 80px;
+  padding-right: 15px;
+  overflow: hidden;
+  background-color: hsl(43, 84%, 65%);
+}
+.activities-container .activity-card .image-container img {
+  float: right;
+  margin-top: -12px;
+}
+.activities-container .activity-card .activity {
+  background-color: hsl(235, 46%, 20%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+}
+.activities-container .activity-card .activity .title,
+.activities-container .activity-card .activity .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+.activities-container .activity-card .activity .title img,
+.activities-container .activity-card .activity .time img {
+  width: 20px;
+}
+.activities-container .activity-card .activity .time {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.activities-container .activity-card .activity .time .current-time {
+  font-size: 32px;
+}
+.activities-container .activity-card .activity .time .previous-time {
+  color: hsl(236, 100%, 87%);
+}
+.activities-container .activity-card.work .image-container {
+  background-color: hsl(15, 100%, 70%);
+}
+.activities-container .activity-card.play .image-container {
+  background-color: hsl(195, 74%, 62%);
+}
+.activities-container .activity-card.study .image-container {
+  background-color: hsl(348, 100%, 68%);
+}
+.activities-container .activity-card.exercise .image-container {
+  background-color: hsl(145, 58%, 55%);
+}
+.activities-container .activity-card.social .image-container {
+  background-color: hsl(264, 64%, 52%);
+}
+.activities-container .activity-card.self-care .image-container {
+  background-color: hsl(43, 84%, 65%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem;
+  background-color: hsl(145, 58%, 55%);
+  width: 100%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 768px) {
+  .dashboard-container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+    align-items: stretch;
+    margin: 5rem auto;
+  }
+  .dashboard-header {
+    grid-row: span 2;
+    height: 94%;
+  }
+  .dashboard-header .reporter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 4.5rem !important;
+  }
+  .dashboard-header .reporter img {
+    width: 96px;
+    border: 4px solid white;
+  }
+  .dashboard-header .reporter .reporter-info {
+    padding-top: 1.5rem;
+  }
+  .dashboard-header .reporter .reporter-info .name {
+    font-size: 42px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 200;
+  }
+  .dashboard-header .date-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .dashboard-header button {
+    font-size: 15px !important;
+  }
+  .activities-container .activities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    min-height: 100%;
+  }
+  .activity {
+    margin-top: -50px;
+  }
+  .time .current-time {
+    font-size: 42px !important;
+    margin: 1rem 0;
+  }
+  .time .previous-time {
+    color: hsl(236, 100%, 87%);
+  }
+  .attribution {
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
