@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - **Solution URL:** [https://github.com/yourusername/time-tracking-dashboard](https://github.com/yourusername/time-tracking-dashboard)
-- **Live Site URL:** [https://yourusername.github.io/time-tracking-dashboard/](https://yourusername.github.io/time-tracking-dashboard/)
+- **Live Site URL:** [https://webmujahid-time-tracking-dashboard.netlify.app/](https://webmujahid-time-tracking-dashboard.netlify.app/)
 
 ## My process
 
@@ -113,7 +113,7 @@ I’d like to expand this in the future to:
 
 ## Author
 
-- GitHub – [@yourusername](https://github.com/yourusername)
+- GitHub – [@Abdulgafar-Riro](https://github.com/Abdulgafar-Riro/time-tracking-dashboard-main)
 - Frontend Mentor – [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 - Twitter – [@yourusername](https://twitter.com/yourusername)
 
