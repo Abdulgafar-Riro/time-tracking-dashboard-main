@@ -1,3 +1,7 @@
+:root {
+  --navy-950: hsl(226, 43%, 10%);
+}
+
 // Colors
 $Purple-600: hsl(246, 80%, 60%);
 $Orange-300: hsl(15, 100%, 70%);
@@ -41,7 +45,7 @@ body {
 // Main Container
 .dashboard-container {
   width: 100%;
-  max-width: 370px;
+  max-width: 23.125rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -54,49 +58,49 @@ body {
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
+}
 
-  .reporter {
-    background-color: $Purple-500;
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-    gap: 1rem;
-    border-radius: 15px;
+.reporter {
+  background-color: $Purple-500;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  border-radius: 15px;
 
-    img {
-      width: 74px;
-      border-radius: 50%;
-      border: 3px solid white;
-    }
-
-    .reporter-info {
-      .report {
-        color: $Navy-200;
-      }
-
-      .name {
-        font-size: 26px;
-        @include rubik(300);
-      }
-    }
+  img {
+    width: 4.625rem;
+    border-radius: 50%;
+    border: 3px solid white;
   }
+}
 
-  .date-navigation {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem;
+.report {
+  color: $Navy-200;
+}
 
-    button {
-      background: none;
-      border: none;
-      color: $Navy-200;
-      font-size: $title-font-size;
-      @include rubik(400);
-      cursor: pointer;
+.name {
+  font-size: 1.625rem;
 
-      &.active {
-        color: white;
-      }
+  @include rubik(300);
+  display: flex;
+}
+
+.date-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+
+  button {
+    background: none;
+    border: none;
+    color: $Navy-200;
+    font-size: $title-font-size;
+    @include rubik(400);
+    cursor: pointer;
+
+    &.active {
+      color: white;
     }
   }
 }
@@ -108,80 +112,82 @@ body {
     flex-direction: column;
     gap: 2rem;
   }
+}
 
-  .activity-card {
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
+.activity-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 
-    .image-container {
-      height: 80px;
-      padding-right: 15px;
-      overflow: hidden;
-      background-color: $Yellow-300;
+  // Backgrounds based on activity
+  &.work .image-container {
+    background-color: $Orange-300;
+  }
+  &.play .image-container {
+    background-color: $Blue-300;
+  }
+  &.study .image-container {
+    background-color: $Pink-400;
+  }
+  &.exercise .image-container {
+    background-color: $Green-400;
+  }
+  &.social .image-container {
+    background-color: $Purple-700;
+  }
+  &.self-care .image-container {
+    background-color: $Yellow-300;
+  }
+}
 
-      img {
-        float: right;
-        // width: 80px;
-        margin-top: -12px;
-      }
-    }
+.image-container {
+  height: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-inline-end: 0.9375rem; // 15px in rem
+  overflow: hidden;
+  background-color: $Yellow-300;
 
-    .activity {
-      background-color: $Navy-900;
-      padding: 1.5rem;
-      border-radius: 15px;
-      margin-top: -40px;
-      position: relative;
-      z-index: 1;
+  img {
+    margin-top: -12px;
+  }
+}
 
-      .title,
-      .time {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: $title-font-size;
-        margin-bottom: 0.5rem;
+.activity {
+  background-color: $Navy-900;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+}
 
-        img {
-          width: 20px;
-        }
-      }
+.title,
+.time {
+  font-size: $title-font-size;
+  margin-bottom: 0.5rem;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-      .time {
-        flex-direction: column;
-        align-items: flex-start;
+  img {
+    width: 20px;
+  }
+}
 
-        .current-time {
-          font-size: 32px;
-        }
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .current-time {
+    font-size: 2rem;
+  }
 
-        .previous-time {
-          color: $Navy-200;
-        }
-      }
-    }
-
-    // Backgrounds based on activity
-    &.work .image-container {
-      background-color: $Orange-300;
-    }
-    &.play .image-container {
-      background-color: $Blue-300;
-    }
-    &.study .image-container {
-      background-color: $Pink-400;
-    }
-    &.exercise .image-container {
-      background-color: $Green-400;
-    }
-    &.social .image-container {
-      background-color: $Purple-700;
-    }
-    &.self-care .image-container {
-      background-color: $Yellow-300;
-    }
+  .previous-time {
+    color: $Navy-200;
   }
 }
 
@@ -194,16 +200,16 @@ body {
   width: 100%;
 
   a {
-    color: hsl(228, 45%, 44%);
+    color: var(--navy-950);
   }
 }
 
 // Desktop Layout
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .dashboard-container {
-    max-width: 1200px;
+    max-width: 75rem;
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 17.5rem 1fr;
     grid-template-rows: auto;
     gap: 2rem;
     align-items: stretch;
@@ -212,35 +218,38 @@ body {
 
   .dashboard-header {
     grid-row: span 2;
-    height: 94%;
-
-    .reporter {
-      flex-direction: column;
-      align-items: flex-start;
-      padding-bottom: 4.5rem !important;
-
-      img {
-        width: 96px;
-        border: 4px solid white;
-      }
-
-      .reporter-info {
-        padding-top: 1.5rem;
-        .name {
-          font-size: 42px;
-          @include rubik(200);
-        }
-      }
-    }
+    height: 95%;
 
     .date-navigation {
+      display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
+      padding-bottom: 1rem;
+      padding-top: 1rem;
     }
 
     button {
       font-size: 15px !important;
+    }
+  }
+
+  .reporter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 4rem;
+
+    img {
+      width: 6rem;
+      border: 4px solid white;
+    }
+  }
+
+  .reporter-info {
+    padding-block-start: 1.5rem;
+    .name {
+      font-size: 2.625rem;
+      @include rubik(200);
     }
   }
 
@@ -253,12 +262,16 @@ body {
   }
 
   .activity {
-    margin-top: -50px;
+    margin-top: -40px;
   }
 
   .time {
-    .current-time {
-      font-size: 42px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p.currentTime {
+      font-size: 2.625rem;
       margin: 1rem 0;
     }
 

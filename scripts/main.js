@@ -58,7 +58,7 @@ function renderData(timeframe) {
               <img src="./images/icon-ellipsis.svg" alt="Ellipsis icon">
             </div>
             <div class="time">
-              <p class="current-time">${current}hrs</p>
+              <p class="current-time currentTime">${current}hrs</p>
               <p class="previous-time">${label} - ${previous}hrs</p>
             </div>
           </article>
